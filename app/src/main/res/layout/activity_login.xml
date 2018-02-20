@@ -82,6 +82,7 @@
                 android:background="@color/colorPrimary"/>
 
             <Button
+                android:id="@+id/loginactivity_loginbutton"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
