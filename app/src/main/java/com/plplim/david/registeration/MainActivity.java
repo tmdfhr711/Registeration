@@ -7,18 +7,43 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ListView noticeListView;
+    private NoticeListAdapter adapter;
+    private List<Notice> noticeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        noticeListView = (ListView) findViewById(R.id.mainactivity_noticeListView);
+        noticeList = new ArrayList<Notice>();
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+        noticeList.add(new Notice("공지사항입니다", "오승록", "2018-02-20"));
+
+        adapter = new NoticeListAdapter(getApplicationContext(), noticeList);
+        noticeListView.setAdapter(adapter);
+
         final Button courseButton = (Button) findViewById(R.id.mainactivity_courseButton);
         final Button statisticsButton = (Button) findViewById(R.id.mainactivity_statisticsButton);
         final Button scheduleButton = (Button) findViewById(R.id.mainactivity_scheduleButton);
         final LinearLayout notice = (LinearLayout) findViewById(R.id.mainactivity_notice);
+
 
         courseButton.setOnClickListener(new View.OnClickListener() {
             @Override
