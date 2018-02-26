@@ -44,7 +44,6 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText idText = (EditText) findViewById(R.id.registeractivity_idtext);
         final EditText passwordText = (EditText) findViewById(R.id.registeractivity_passwordText);
         final EditText emailText = (EditText) findViewById(R.id.registeractivity_emailText);
-
         RadioGroup genderGroup = (RadioGroup) findViewById(R.id.registeractivity_genderGroup);
         int genderGroupID = genderGroup.getCheckedRadioButtonId();
         userGender = ((RadioButton) findViewById(genderGroupID)).getText().toString();
